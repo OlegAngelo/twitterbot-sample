@@ -34,8 +34,8 @@ def reply_to_tweets():
         last_seen_id = mention.id
         store_last_seen_id(last_seen_id, FILE_NAME)
         if '#sanaall' in mention.full_text.lower():
-            print('found #sanaall')
-            print('responding back in 3, 2, 1 ...')
+            print('found #sanaall', flush=True)
+            print('responding back in 3, 2, 1 ...', flush=True)
             api.update_status('@' + mention.user.screen_name + ' Sana oooolllll mag maoy!', mention.id)
 
 while True:
