@@ -2,7 +2,7 @@ import tweepy
 import time
 from keys import *
 
-print('Loading, please wait' flush=True)
+print('Loading, please wait', flush=True)
 
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
@@ -30,7 +30,7 @@ def reply_to_tweets():
                         last_seen_id,
                         tweet_mode='extended')
     for mention in reversed(mentions):
-        print(str(mention.id) + ' - ' + mention.full_text)
+        print(str(mention.id) + ' - ' + mention.full_text, flush=True)
         last_seen_id = mention.id
         store_last_seen_id(last_seen_id, FILE_NAME)
         if '#sanaall' in mention.full_text.lower():
