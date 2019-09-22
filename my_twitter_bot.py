@@ -1,12 +1,9 @@
 import tweepy
 import time
+from keys import *
 
-print('Loading, please wait')
+print('Loading, please wait' flush=True)
 
-CONSUMER_KEY = 'RpMgx8PCAZaSoQCQHxiQgxBHR'
-CONSUMER_SECRET = 'oLocKmVRYRORUDeUtcupW5HMJC5h4v5T1qBYxISWXXNK7HMi52'
-ACCESS_KEY = '802495264208482305-uSmKMuA6jJo55PoOKw0frZSVrYYpodt'
-ACCESS_SECRET = 'aieEHMtec42Rr5iofZcUnzoC8qelEGJvOJNGxkTlnAJbN'
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
@@ -27,7 +24,7 @@ def store_last_seen_id(last_seen_id, file_name):
     return
 
 def reply_to_tweets():
-    print('retrieving and replying to tweets...')
+    print('retrieving and replying to tweets...', flush=True)
     last_seen_id = retrieve_last_seen_id(FILE_NAME)
     mentions = api.mentions_timeline(
                         last_seen_id,
