@@ -36,7 +36,7 @@ def reply_to_tweets():
         if '#sanaall' in mention.full_text.lower():
             print('found #sanaall')
             print('responding back in 3, 2, 1 ...')
-            api.update_status('@ ' + mention.user.screen_name + 'Sana oooolllll mag maoy!', mention.id)
+            api.update_status('@' + mention.user.screen_name + ' Sana oooolllll mag maoy!', mention.id)
 
 while True:
     reply_to_tweets()
